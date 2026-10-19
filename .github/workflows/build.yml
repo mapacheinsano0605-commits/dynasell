@@ -12,8 +12,8 @@ jobs:
           distribution: temurin
           java-version: '21'
           cache: maven
-     - run: mvn -B package -f DynaSell/pom.xml
+      - run: mvn -B package -f DynaSell/pom.xml
       - uses: actions/upload-artifact@v4
         with:
           name: DynaSell
-        path: DynaSell/target/DynaSell.jar
+          path: DynaSell/target/DynaSell.jar
