@@ -1,0 +1,46 @@
+# ===== DynaSell =====
+
+dynamic:
+  enabled: true
+  # Cuánto baja el precio por cada ítem vendido (0.0003 = 0.03% por ítem).
+  # 64 ítems ~ -1.9% | 1000 ítems ~ -26% | 3000 ítems ~ -59%
+  impact-per-item: 0.0003
+  # Límites del precio respecto al precio base (1.0 = precio base).
+  min-multiplier: 0.40
+  max-multiplier: 1.50
+  # Qué tan rápido vuelve el precio al base (fracción por hora, aprox.).
+  recovery-per-hour: 0.10
+  # Variación aleatoria cada 5 minutos (0.01 = +-1%). Pon 0 para desactivar.
+  drift: 0.01
+
+# Precio de ítems sin precio en prices.yml, sin receta y sin ingredientes con precio.
+default-price: 4.0
+# Los ítems crafteados valen (suma de ingredientes / cantidad) x este valor.
+crafted-multiplier: 0.9
+# Extra que se suma a los ítems que salen de un horno.
+smelting-bonus: 1.0
+
+# Ítems que NO se pueden vender (nombres de Material). Vacío = se vende todo.
+blacklist: []
+
+menu:
+  title: "&8Vender ítems"
+  info-name: "&aTotal: &2$%total%"
+  info-lore:
+    - "&7Ítems: &f%items%"
+    - ""
+    - "&eCierra el menú para vender"
+
+messages:
+  prefix: "&6&lSELL &8» &7"
+  sold: "&aVendiste &f%items% &aítems por &2$%money%&a."
+  nothing: "&cNo pusiste ningún ítem vendible."
+  error: "&cNo se pudo completar la venta, te devolví tus ítems."
+  unknown-item: "&cÍtem desconocido o sin precio."
+  worth: "&e%item% &7vale &a$%price% &7c/u &8(base $%base%, %percent%%)"
+  worth-stack: "&7Stack de %amount%: &a$%total%"
+  only-players: "&cSolo jugadores."
+  reloaded: "&aConfiguración y precios recargados."
+  price-set: "&aPrecio base de &f%item% &aahora es &2$%price%&a."
+  reset: "&aTodos los precios volvieron a su valor base."
+  usage-admin: "&cUso: /dynasell <reload|setprice <ítem> <precio>|reset>"

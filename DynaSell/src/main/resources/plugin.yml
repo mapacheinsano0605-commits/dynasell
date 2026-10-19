@@ -1,0 +1,31 @@
+name: DynaSell
+version: 1.0.0
+main: dev.dynasell.DynaSell
+api-version: '1.21'
+load: POSTWORLD
+description: /sell con menu y precios dinamicos para todos los items
+depend: [Vault]
+loadbefore: [Essentials]
+
+commands:
+  sell:
+    description: Abre el menu de venta
+    usage: /sell
+    permission: dynasell.sell
+  worth:
+    description: Muestra el precio actual de un item
+    usage: /worth [item]
+    permission: dynasell.worth
+  dynasell:
+    description: Administracion de DynaSell
+    usage: /dynasell <reload|setprice|reset>
+    aliases: [ds]
+    permission: dynasell.admin
+
+permissions:
+  dynasell.sell:
+    default: true
+  dynasell.worth:
+    default: true
+  dynasell.admin:
+    default: op
